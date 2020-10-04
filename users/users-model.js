@@ -21,8 +21,13 @@ function findBy(filter){
 }
 
 async function add(user){
+    console.log('add start')
+    console.log("user",user)
     try{
-        const [id] = await db('users').insert(user,'id');
+ const [id] = await db('users').insert(user,'id');
+ console.log('added')
+        // return id
+    
         return findById(id)
     }catch (err) {
         throw error
